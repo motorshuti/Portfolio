@@ -16,28 +16,27 @@ jobs:
     name: Build container
     runs-on: ubuntu-latest
     steps:
-      - name: "☁️ checkout repository"
+      - name: "☁️ Checkout repository"
         uses: actions/checkout@v2
 
-      - name: "🔧 setup buildx"
+      - name: "🔧 Setup buildx"
         uses: docker/setup-buildx-action@v1
 
-      - name: "🔧 cache docker layers"
+      - name: "🔧 Cache docker layers"
         uses: actions/cache@v2
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
-
-      - name: "🔧 docker meta"
+      - name: "🔧 Docker meta"
         id: meta
         uses: docker/metadata-action@v3
         with:
           images: ${{ github.repository }}
           tags: latest
 
-      - name: "📦 docker build"
+      - name: "📦 Docker build"
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -48,7 +47,7 @@ jobs:
           cache-from: type=gha, scope=${{ github.workflow }}
           cache-to: type=gha, scope=${{ github.workflow }}
 
-      - name: "📂 docker artifacts"
+      - name: "📂 Docker artifacts"
         uses: actions/upload-artifact@v2
         with:
           name: docker
@@ -58,21 +57,21 @@ jobs:
     name: Build application
     runs-on: ubuntu-latest
     steps:
-      - name: "☁️ checkout repository"
+      - name: "☁️ Checkout repository"
         uses: actions/checkout@v2
 
-      - name: "🔧 setup node"
+      - name: "🔧 Setup Node.js"
         uses: actions/setup-node@v2.1.5
         with:
           node-version: 16
 
-      - name: "🔧 install npm@latest"
+      - name: "🔧 Install npm@latest"
         run: npm i -g npm@latest
 
-      - name: "📦 install dependencies"
+      - name: "📦 Install dependencies"
         uses: bahmutov/npm-install@v1
 
-      - name: "📊 repository visualizer"
+      - name: "📊 Repository visualizer"
         id: diagram
         uses: githubocto/repo-visualizer@0.7.1
         with:
@@ -82,10 +81,10 @@ jobs:
           root_path: "src/"
           artifact_name: "diagram"
 
-      - name: "🚀 static app"
+      - name: "🚀 Static app"
         run: npm run build
 
-      - name: "📂 production artifacts"
+      - name: "📂 Production artifacts"
         uses: actions/upload-artifact@v2
         with:
           name: build
@@ -102,35 +101,34 @@ jobs:
       - build
     runs-on: ubuntu-latest
     steps:
-      - name: "☁️ checkout repository"
+      - name: "☁️ Checkout repository"
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: "📂 download docker artifacts"
+      - name: "📂 Download docker artifacts"
         uses: actions/download-artifact@v2
         with:
           name: docker
           path: /tmp
 
-      - name: "📦 load tag"
+      - name: "📦 Load tag"
         run: |
           docker load --input /tmp/docker.tar
           docker image ls -a
-
-      - name: "📂 download build artifacts"
+      - name: "📂 Download build artifacts"
         uses: actions/download-artifact@v2
         with:
           name: build
           path: build
 
-      - name: "📂 download diagram artifacts"
+      - name: "📂 Download diagram artifacts"
         uses: actions/download-artifact@v2
         with:
           name: diagram
           path: .
 
-      - name: "🚀 release"
+      - name: "🚀 Release"
         id: semantic-release
         uses: open-sauced/semantic-release-conventional-config@v3
         env:
@@ -142,10 +140,11 @@ jobs:
       - release
     runs-on: ubuntu-latest
     steps:
-      - name: "♻️ remove build artifacts"
+      - name: "♻️ Remove build artifacts"
         uses: geekyeggo/delete-artifact@v1
         with:
           name: |
             build
             docker
             diagram
+
