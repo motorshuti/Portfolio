@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhusruti Das Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        /* Header Styles */
+        #header {
+            background-color: #cd666a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #header a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #header td {
+            padding: 15px;
+        }
+
+        /* Home Section Styles */
+        #home {
+            background-color: black;
+            color: #cd666a;
+            text-align: center;
+        }
+
+        #home h3 {
+            font-family: "Times New Roman", sans-serif;
+            font-size: 36px;
+        }
+
+        #home h2 {
+            font-family: Verdana, sans-serif;
+            font-size: 36px;
+        }
+
+        /* About Section Styles */
+        #about {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-family: Verdana, sans-serif;
+            color: #cd666a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-family: Verdana, sans-serif;
+            font-size: 18px;
+            text-align: justify;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        /* Projects Section Styles */
+        #projects {
+            background-color: #c2c0c3;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-family: Verdana, sans-serif;
+            color: black;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #projects ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        #projects ul li {
+            font-family: "Times New Roman", sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        /* Achievements Section Styles */
+        #achievements {
+            background-color: black;
+            color: #cd666a;
+            text-align: center;
+        }
+
+        #achievements h2 {
+            font-family: Verdana, sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #achievements ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        #achievements ul li {
+            font-family: Verdana, sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            background-color: #c2c0c3;
+            color: black;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-family: Verdana, sans-serif;
+            color: #cd666a;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #contact table {
+            margin: 0 auto;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="number"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+            font-size: 16px;
+        }
+
+        #contact button {
+            background-color: #cd666a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Verdana, sans-serif;
+            font-size: 16px;
+        }
+
+        #contact button:hover {
+            background-color: #cd666a;
+        }
+
+        /* Footer Styles */
+        #footer {
+            background-color: #cd666a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #footer a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        #footer td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <table id="header" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <font face="Comic sans MS" size="6">
+                                <b>Madhusruti Das</b>
+                            </font>
+                        </td>
+                        <td width="15%"></td>
+                        <td><a href="#home"><font face="Verdana" size="5">Home</font></a></td>
+                        <td>|</td>
+                        <td><a href="#about"><font face="Verdana" size="5">About</font></a></td>
+                        <td>|</td>
+                        <td><a href="#projects"><font face="Verdana" size="5">Projects</font></a></td>
+                        <td>|</td>
+                        <td><a href="#achievements"><font face="Verdana" size="5">Achievements</font></a></td>
+                        <td>|</td>
+                        <td><a href="#contact"><font face="Verdana" size="5">Contact</font></a></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Home Section -->
+    <table id="home" border="1" width="100%" cellpadding="20" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td align="center" valign="middle">
+                            <h3><font face="Times New Roman" size="6" color="#ffffff">Hola!</font></h3>
+                            <h2><font face="Verdana" size="6" color="#cd666a">Welcome to my Portfolio</font></h2>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- About Section -->
+    <table id="about" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" valign="middle" colspan="2">
+                            <font face="Verdana" size="7" color="#cd666a">About Me</font>
+                            <hr color="#cd666a" width="90">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="40%">
+                            <img src="MADHUSRUTI_PHOTO.jpg" alt="Madhusruti Das" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover;">
+                        </td>
+                        <td width="60%">
+                            <font face="Verdana" size="4" color="white">
+                                <p>
+                                    Hi there! I'm Madhusruti Das, a passionate software developer and a student at VIT,Vellore persuing Ingtegrated M.Tech in Computer Science and Engineering. I love to solve programming problems and develop efficient solutions. Here's a quick overview of what I do and what you'll find on this website:
+                                </p>
+                                <ul>
+                                    <li>I have a strong foundation in C++, Java.</li>
+                                    <li>Proficient in Data Structures and Algorithms.</li>
+                                    <li>Experienced in Web Development</li>
+                                    <li>This website is one of my Web Development projects built using HTML, CSS, and JavaScript.</li>
+                                    <li>Budding singer and much more!</li>
+                                </ul>
+                                <p>Thank you for visiting my portfolio. Feel free to explore and get in touch!</p>
+                                <p>Cheers,<br><b>Madhusruti Das</b></p>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Projects Section -->
+    <table id="projects" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" valign="middle" colspan="2">
+                            <font face="Verdana" size="7" color="black">Projects</font>
+                            <hr color="black" width="90">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="10">
+                            <font face="Times New Roman" size="5" color="black">
+                                <ul style="list-style-type: circle; color: #cd666a; font-size: 18px;">
+                                    <li>Healthy You-Your Medical Hub <a href="#" style="text-decoration:none"> ➲</a></li>
+                                    <li>Image Processing-based Road Safety Enhancement System for Pothole Detection, Lane Markings, Pedestrians <a href="#" style="text-decoration:none"> ➲</a></li>
+                                    <li>Spotify Recommendation System with Machine Learning <a href="#" style="text-decoration:none"> ➲</a></li>
+                                </ul>                                                          
+                            </font>
+                        </td>
+                        <td width="45%">
+                            <img src="img1.png" alt="Projects" width="85%" style="border-radius: 10px;">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Achievements Section -->
+    <table id="achievements" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" valign="middle">
+                            <font face="Verdana" size="7" color="#cd666a">Achievements</font>
+                            <hr color="#cd666a" width="100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <font face="Verdana" size="4" color="white">
+                                <ul>
+                                    <li><b>Intern at Stryker.</b></li>
+                                    <li><b>Received Merit Scholarship for 3 years in VIT.</b></li>
+                                    <li><b>Won third Prize in Glory (Diocese of Calcutta) Program</b></li>
+                                </ul>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Contact Section -->
+    <table id="contact" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center" valign="middle" colspan="2">
+                            <font face="Verdana" size="7" color="black">Contact</font>
+                            <hr color="black" width="90">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            <table border="0" width="50%" cellpadding="15" cellspacing="0" align="center">
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4" color="black">Name</font>
+                                    </td>
+                                    <td width="70%">
+                                        <input type="text" size="40">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4" color="black">Email</font>
+                                    </td>
+                                    <td width="70%">
+                                        <input type="email" size="40">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4" color="black">Number</font>
+                                    </td>
+                                    <td width="70%">
+                                        <input type="number" size="12">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="30%">
+                                        <font face="Verdana" size="4" color="black">Message</font>
+                                    </td>
+                                    <td width="70%">
+                                        <textarea rows="5" cols="37"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <button>Submit</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Footer -->
+    <table id="footer" border="0" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15" cellspacing="0" width="90%" align="center">
+                    <tr>
+                        <td></td>
+                        <td>Connect with me on:</td>
+                        <td>
+                            <a href="tel:+919836299304">
+                                <img src="img3.png" alt="Mobile" width="40" height="40" style="border-radius: 50%; border: 2px solid #cd666a;">
+                            </a>                            
+                        </td>
+                        <td>
+                            <a href="https://www.linkedin.com/in/madhusruti-das-125406229" target="_blank">
+                                <img src="img4.png" alt="LinkedIn" width="40" height="40" style="border-radius: 50%; border: 2px solid #cd666a;">
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <a href="mailto:dasmadhusruti15@gmail.com">
+                                <img src="img2.png" alt="Gmail" width="40" height="40" style="border-radius: 50%; border: 2px solid #cd666a;">
+                            </a>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">© 2024 Madhusruti Das. All Rights Reserved.</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
