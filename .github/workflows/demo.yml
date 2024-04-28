@@ -1,35 +1,8 @@
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-      - development
-
+name: hello-world
+on: push
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-
-      - name: Install dependencies
-        run: npm install
-        # Add other dependency installations if needed
-
-      - name: Build
-        run: npm run build
-        # Add other build commands if needed
-
-      - name: Test
-        run: npm run test
-        # Add other test commands if needed
-
-      - name: Deploy
-        run: npm run deploy
-        # Add deployment commands if needed
+      - name: my-step
+        run: echo "Hello World!"
