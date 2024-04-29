@@ -26,7 +26,17 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
+        id: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.MAD }}
           publish_dir: ./_site
+
+      - name: Get Deployment URL
+        run: echo "Website deployed at https://motorshuti.github.io/Portfolio/"
+
+      - name: Set output URL
+        run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
+
+      - name: Show URL
+        run: echo "Deployed to ${{ steps.deploy.outputs.url }}"
