@@ -38,19 +38,5 @@ jobs:
       - name: Set output URL
         run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
 
-  notify:
-    needs: deploy
-    runs-on: ubuntu-latest
-    if: always()
-    steps:
       - name: Output URL
-        run: echo "Deployed to ${{ needs.deploy.outputs.url }}"
-
-  workflows:
-    deploy:
-      jobs:
-        - deploy
-        - notify:
-            needs: deploy
-            runs-on: ubuntu-latest
-            if: always()
+        run: echo "Deployed to ${{ steps.deploy.outputs.url }}"
