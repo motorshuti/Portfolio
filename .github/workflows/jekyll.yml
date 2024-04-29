@@ -32,29 +32,25 @@ jobs:
           github_token: ${{ secrets.YOUR_PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./_site
 
+      - name: Show URL
+        run: echo "Website deployed at https://motorshuti.github.io/Portfolio/"
+
+      - name: Set output URL
+        run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
+
   notify:
     needs: deploy
     runs-on: ubuntu-latest
     if: always()
     steps:
-      - name: Get Deployment URL
-        run: echo "Website deployed at https://motorshuti.github.io/Portfolio/"
-        id: deployment_url
-
-      - name: Show URL
-        run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
-      
       - name: Output URL
-        run: echo "Deployed to ${{ steps.deployment_url.outputs.url }}"
-        id: output_url
+        run: echo "Deployed to ${{ needs.deploy.outputs.url }}"
 
   workflows:
-    # The deploy workflow
     deploy:
       jobs:
         - deploy
-
-    # The notify workflow
-    notify:
-      jobs:
-        - notify
+        - notify:
+            needs: deploy
+            runs-on: ubuntu-latest
+            if: always()
