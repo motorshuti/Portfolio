@@ -29,14 +29,32 @@ jobs:
         id: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MAD }}
+          github_token: ${{ secrets.MAD}}
           publish_dir: ./_site
 
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
       - name: Get Deployment URL
         run: echo "Website deployed at https://motorshuti.github.io/Portfolio/"
-
-      - name: Set output URL
-        run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
+        id: deployment_url
 
       - name: Show URL
-        run: echo "Deployed to ${{ steps.deploy.outputs.url }}"
+        run: echo "::set-output name=url::https://motorshuti.github.io/Portfolio/"
+      
+      - name: Output URL
+        run: echo "Deployed to ${{ steps.deployment_url.outputs.url }}"
+        id: output_url
+
+  workflows:
+    # The deploy workflow
+    deploy:
+      jobs:
+        - deploy
+
+    # The notify workflow
+    notify:
+      jobs:
+        - notify
