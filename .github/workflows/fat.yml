@@ -21,14 +21,10 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install dependencies
+    - name: Install dependencies and build
       run: |
-        cd Portfolio
+        cd $GITHUB_WORKSPACE  # Set the working directory to the root of the repository
         npm install
-
-    - name: Build
-      run: |
-        cd Portfolio
         npm run build
 
     - name: Run security check
