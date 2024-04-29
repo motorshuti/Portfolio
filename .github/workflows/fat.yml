@@ -22,10 +22,14 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd Portfolio
+        npm install
 
     - name: Build
-      run: npm run build
+      run: |
+        cd Portfolio
+        npm run build
 
     - name: Run security check
       uses: snyk/actions/node@master
