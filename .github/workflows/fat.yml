@@ -21,10 +21,12 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install dependencies and build
+    - name: Install dependencies
       run: |
-        cd $GITHUB_WORKSPACE  # Set the working directory to the root of the repository
         npm install
+
+    - name: Build
+      run: |
         npm run build
 
     - name: Run security check
@@ -32,4 +34,4 @@ jobs:
       with:
         args: test
       env:
-        SNYK_TOKEN: ${{ secrets.MAD }}
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
