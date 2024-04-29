@@ -29,7 +29,7 @@ jobs:
         id: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MAD}}
+          github_token: ${{ secrets.YOUR_PERSONAL_ACCESS_TOKEN }}
           publish_dir: ./_site
 
   notify:
